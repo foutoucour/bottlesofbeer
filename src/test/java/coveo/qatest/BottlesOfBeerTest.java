@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -54,6 +55,25 @@ public class BottlesOfBeerTest {
                 this.initialNumberOfBeer
         );
         assertEquals(expected, this.bottlesOfBeer.getSentence(0));
+    }
+
+    /*
+    Test against all the song.
+    The song is stored in {root}/song.txt file
+     */
+    @Test
+    public void allTheSong() throws Exception {
+        String workingDirectory = System.getProperty("user.dir");
+        Path path = Paths.get(workingDirectory, "src", "test", "java", "coveo", "qatest", "song.txt");
+        List<String> lines = null;
+        try {
+            lines = Files.readAllLines(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String expected = String.join("\n", lines);
+        BottlesOfBeer bottlesOfBeer = new BottlesOfBeer(99);
+        assertEquals(expected, bottlesOfBeer.sing());
     }
 
 }
