@@ -19,14 +19,14 @@ official website to install maven on your environment.
 
 No special instruction for this steps. The project follows the common way to use maven:
 
-    `mvn package`
+    ?> mvn package
 
 ## Execute the script
 
 The execution of the script should be done using maven, to ease the setup of the environment.
 While being in the root folder of the project:
 
-    `mvn exec:java -Dexec.mainClass="coveo.qatest.Main" -s "./pom.xml" -Dexec.args="99"`
+    ?> mvn exec:java -Dexec.mainClass="coveo.qatest.Main" -s "./pom.xml" -Dexec.args="99"
 
 Change `-Dexec.args` if you want to drink more or less beers.
 
