@@ -3,7 +3,7 @@ package coveo.qatest;
 /**
  * Represents the song of X Bottles Of Beer. The song can be 99 bottles long but the size can change.
  */
-class Lyrics {
+public class Lyrics {
 
     private int numberOfBottles;
 
@@ -12,7 +12,7 @@ class Lyrics {
      *
      * @param numberOfBottles number of bottle to drink
      */
-    Lyrics(int numberOfBottles) {
+    public Lyrics(int numberOfBottles) {
         this.numberOfBottles = numberOfBottles;
     }
 
@@ -21,7 +21,7 @@ class Lyrics {
      *
      * @return the lyrics of the song
      */
-    String get() {
+    public String get() {
         int[] reversedNumberOfBottles = new int[this.numberOfBottles];
         StringBuilder song = new StringBuilder();
         for (int i = this.numberOfBottles; i >= 0; i--) {
@@ -36,7 +36,7 @@ class Lyrics {
      * @param numberBottles the number of bottles
      * @return the lyrics related to the number of bottles
      */
-    String buildLyricsFor(int numberBottles) {
+    public String buildLyricsFor(int numberBottles) {
         switch (numberBottles) {
             case 0:
                 return String.format(
