@@ -27,11 +27,15 @@ public class MainTest {
         System.setOut(null);
     }
 
+    /**
+     * When we launch the application
+     * Then we sing all the 99 bottles of beer song
+     */
     @Test
     public void output() {
-        Main.main(new String[]{"99"});
+        Main.main(new String[]{});
         String workingDirectory = System.getProperty("user.dir");
-        Path path = Paths.get(workingDirectory, "src", "test", "java", "coveo", "qatest", "song.txt");
+        Path path = Paths.get(workingDirectory, "src", "test", "song.txt");
         List<String> lines = null;
         try {
             lines = Files.readAllLines(path);
